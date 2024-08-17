@@ -37,7 +37,7 @@ cd ~
 
 git clone https://github.com/sung0503/tiny_moulinette.git
 
-cd "path/to/your/assignment"
+cd C02
 
 run ~/tiny_moulinette/run.sh
 ```
