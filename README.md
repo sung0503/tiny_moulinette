@@ -1,12 +1,24 @@
 # tiny_moulinette
+<table>
+  <tr>
+    <td align="center">
+      <strong>이미지 1 이름</strong><br>
+      <img src="images/moulinette.webp" alt="이미지 1" width="300"/>
+    </td>
+    <td align="center">
+      <strong>이미지 2 이름</strong><br>
+      <img src="images/tiny_moulinette.webp" alt="이미지 2" width="300"/>
+    </td>
+  </tr>
+</table>
 <div style="display: flex;">
   <div style="width: 50%; text-align: center;">
     <p>Original moulinette</p>
-    <img src="images/moulinette.webp" alt="moulinette" style="width: 100%;">
+    <img src="images/moulinette.webp" alt="moulinette" style="width: 50%;">
   </div>
   <div style="width: 50%; text-align: center;">
     <p>Tiny moulinette</p>
-    <img src="images/tiny_moulinette.webp" alt="tiny_moulinette" style="width: 100%;">
+    <img src="images/tiny_moulinette.webp" alt="tiny_moulinette" style="width: 50%;">
   </div>
 </div>
 Tiny-moulinette is a test runner designed to pre-test the 42 C Piscine assignments, aiming to provide automatic testing for all assignments with a single command. Our ultimate goal is to generate and verify all test cases for every C Piscine assignment.
