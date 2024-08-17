@@ -18,11 +18,31 @@
 ## Introduction
 You're probably doing your best in the C Piscine course. During this program, peer evaluations offer a great opportunity to learn, but this process may lead to some wasted time. If you can't avoid stupid mistakes, such as failing to pass the ***norminette***, you'll waste valuable time. This is why we started this project—to pass the moulinette in a single submission.
 
-### How to Install
+### Update
+This project may be updated frequently, so please always check for updates.
 
-### How to run
+```bash
+git pull
+```
 
-### Status
+### How to use
+We tried to make it as easy as possible. You just have to execute ***run.sh*** inside the CXX folder.
+
+> ***Warning: Use with caution.***   
+> This project does not quarantee 100% accurate, the tests may not cover every edge cases.
+
+Following scripts are just for examples.
+```bash
+cd ~
+
+git clone https://github.com/sung0503/tiny_moulinette.git
+
+cd "path/to/your/assignment"
+
+run ~/tiny_moulinette/run.sh
+```
+
+## Status
 | Assignment    | Coverage  | Remarks               |
 |:-------------:|:---------:|:---------------------:|
 | C00           | 0/9       | Not yet implemented   |
@@ -42,5 +62,5 @@ You're probably doing your best in the C Piscine course. During this program, pe
 
 ### Updates
 
-### LICENSE
+## LICENSE
 This project is licensed under the MIT License, and was inspired by [k11q's work](https://github.com/k11q/mini-moulinette).
