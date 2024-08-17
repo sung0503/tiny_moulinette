@@ -3,11 +3,11 @@
 <table>
   <tr>
     <td align="center">
-      <strong>Original moulinette</strong><br>
+      <strong>Original</strong><br>
       <img src="images/moulinette.webp" alt="이미지 1" width="300"/>
     </td>
     <td align="center">
-      <strong>Tiny moulinette</strong><br>
+      <strong>Ours</strong><br>
       <img src="images/tiny_moulinette.webp" alt="이미지 2" width="300"/>
     </td>
   </tr>
