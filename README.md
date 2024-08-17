@@ -41,3 +41,6 @@ You're probably doing your best in the C Piscine course. During this program, pe
 | C13           | 0/8       | Not yet implemented   |
 
 ### Updates
+
+### LICENSE
+This project is licensed under the MIT License, and was inspired by [k11q's work](https://github.com/k11q/mini-moulinette).
