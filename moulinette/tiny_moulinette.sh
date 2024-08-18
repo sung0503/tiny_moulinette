@@ -16,7 +16,7 @@ print_header() {
     printf "░░░██║░░░██║██║░╚███║░░░██║░░░\n"
     printf "░░░╚═╝░░░╚═╝╚═╝░░╚══╝░░░╚═╝░░░\n"
     printf "${DEFAULT}"
-    printf "    ver. 0.0.1 18 Aug 2024\n"
+    printf "    ver. 0.0.19 19 Aug 2024\n"
 }
 
 print_footer()
