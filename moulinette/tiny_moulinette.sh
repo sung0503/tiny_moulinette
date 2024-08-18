@@ -35,7 +35,8 @@ compile() {
 test_exercise() {
     local num_ex="$1"
     local arguments="$2"
-    if !compile ${num_ex}; then
+    if ! compile ${num_ex}; then
+        printf "${BG_RED}${BOLD} Compile KO :( ${DEFAULT}\n"
         return 1
     fi
     . "./moul/ex${num_ex}.out" ${arguments} > "./moul/ex${num_ex}_user" 2>&1
