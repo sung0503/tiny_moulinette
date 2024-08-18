@@ -76,3 +76,7 @@ test_assignment() {
 print_header
 test_assignment
 print_footer
+
+# TODO:
+# argument handling
+# norminette check only user's .c file
