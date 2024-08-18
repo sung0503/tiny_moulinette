@@ -16,12 +16,13 @@ print_header() {
     printf "░░░██║░░░██║██║░╚███║░░░██║░░░\n"
     printf "░░░╚═╝░░░╚═╝╚═╝░░╚══╝░░░╚═╝░░░\n"
     printf "${DEFAULT}"
-    printf "    ver. 0.0.19 19 Aug 2024\n"
+    printf "    ver. 0.0.19 19 Aug 2024\n\n"
+    printf "  Now testing ${ASSN} assignment\n"
 }
 
 print_footer()
 {
-    printf "\n${PURPLE}--------------------------------------------------${DEFAULT}\n\n"
+    printf "\n${PURPLE}------------------------------${DEFAULT}\n\n"
     printf "Result: "
     for result in "${FINAL_RESULT[@]}"; do
         printf "${result} "
@@ -42,19 +43,19 @@ test_exercise() {
     local arguments="$2"
     if ! compile ${num_ex}; then
         printf "${PURPLE}ex${num_ex}: ${DEFAULT}"
-        printf "${BG_RED}${BOLD} Compile KO :( ${DEFAULT}\n"
+        printf "Compile Error! ${BG_RED}${BOLD} :( ${DEFAULT}\n"
         return 1
     fi
     ./moul/ex${num_ex}.out > "./moul/ex${num_ex}.user"
     local diff_result=$(diff "./moul/ex${num_ex}.user" "./moul/tests/${ASSN}/ex${num_ex}.expected" | cat -e)
-    printf "${diff_result}\n"
     if [[ ${diff_result} == "" ]]; then
         printf "${PURPLE}ex${num_ex}: ${DEFAULT}"
-        printf "${BG_GREEN}${BLACK}${BOLD} OK :D ${DEFAULT}\n"
+        printf "PASS ${BG_GREEN}${BLACK}${BOLD} :D ${DEFAULT}\n"
         return 0
     else
+        printf "${diff_result}\n"
         printf "${PURPLE}ex${num_ex}: ${DEFAULT}"
-        printf "${BG_RED}${BOLD} Diff KO :( ${DEFAULT}\n"
+        printf "Diff Fail ${BG_RED}${BOLD} :( ${DEFAULT}\n"
         return 1
     fi
 }
