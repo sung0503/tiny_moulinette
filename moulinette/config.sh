@@ -13,17 +13,6 @@ readonly BOLD='\033[1m'
 readonly DEFAULT='\033[0m'
 readonly CHECKMARK='\xE2\x9C\x93'
 
-sigint_handler() {
-    echo "${RED}Script Aborted. Cleaning up..."
-    rm -rf moul
-    echo "${GREEN}Cleaning done.${DEFAULT}"
-    exit 1
-}
-
-exit_handler() {
-    rm -rf moul
-}
-
 get_exercises() {
     local ASSN="$1"
     local number_of_exercise=0
@@ -31,49 +20,48 @@ get_exercises() {
 
     case "${ASSN: -2}" in
         "00")
-            number_of_exercise=9
+            number_of_exercise=8
             ;;
         "01")
-            number_of_exercise=9
+            number_of_exercise=8
             ;;
         "02")
-            number_of_exercise=13
+            number_of_exercise=12
             ;;
         "03")
-            number_of_exercise=6
+            number_of_exercise=5
             ;;
         "04")
-            number_of_exercise=6
+            number_of_exercise=5
             ;;
         "05")
-            number_of_exercise=9
+            number_of_exercise=8
             ;;
         "06")
-            number_of_exercise=4
-            ;;
-        "07")
-            number_of_exercise=6
-            ;;
-        "08")
-            number_of_exercise=6
-            ;;
-        "09")
             number_of_exercise=3
             ;;
+        "07")
+            number_of_exercise=5
+            ;;
+        "08")
+            number_of_exercise=5
+            ;;
+        "09")
+            number_of_exercise=2
+            ;;
         "10")
-            number_of_exercise=4
+            number_of_exercise=3
             ;;
         "11")
-            number_of_exercise=8
+            number_of_exercise=7
             ;;
         "12")
-            number_of_exercise=18
+            number_of_exercise=17
             ;;
         "13")
-            number_of_exercise=8
+            number_of_exercise=7
             ;;
         *)
-            echo "Invalid input."
             return 1
             ;;
     esac

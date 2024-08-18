@@ -16,19 +16,24 @@ print_header() {
     printf "░░░██║░░░██║██║░╚███║░░░██║░░░\n"
     printf "░░░╚═╝░░░╚═╝╚═╝░░╚══╝░░░╚═╝░░░\n"
     printf "${DEFAULT}"
-    printf "    ver. 0.0.1 18 Aug 2024\n\n"
+    printf "    ver. 0.0.1 18 Aug 2024\n"
 }
 
 print_footer()
 {
-    printf "${PURPLE}----------------------------------------${DEFAULT}\n"
-    printf "Result: %s\n" "${FINAL_RESULT[*]}"
-    printf "${GREY}Test completed.${DEFAULT}.\n"
+    printf "\n${PURPLE}--------------------------------------------------${DEFAULT}\n\n"
+    printf "Result: "
+    for result in "${FINAL_RESULT[@]}"; do
+        printf "${result} "
+    done
+    printf "${DEFAULT}\n\n"
 }
 
 compile() {
-    local num_ex="${1}"
-    cc -Wall -Wextra -Werror -o "./moul/ex${num_ex}.out" "./ex${num_ex}/*.c" "./moul/tests/${ASSN}/ex${num_ex}.c"
+    local num_ex="$1"
+    shift
+    local source_files=("$@")
+    cc -Wall -Wextra -Werror -o "./moul/ex${num_ex}.out" $(ls ex${num_ex}/*.c) "./moul/tests/${ASSN}/ex${num_ex}.c"
     return $?
 }
 
@@ -36,16 +41,19 @@ test_exercise() {
     local num_ex="$1"
     local arguments="$2"
     if ! compile ${num_ex}; then
+        printf "${PURPLE}ex${num_ex}: ${DEFAULT}"
         printf "${BG_RED}${BOLD} Compile KO :( ${DEFAULT}\n"
         return 1
     fi
-    . "./moul/ex${num_ex}.out" ${arguments} > "./moul/ex${num_ex}_user" 2>&1
-    local diff_result=$(diff "./moul/ex${num_ex}_user" "./moul/ex${num_ex}_expected" | cat -e)
-    if [[ ${diff_result} == "" ]]
-    then
-        printf "${BG_GREEN}${BLACK}${BOLD} Diff OK :D ${DEFAULT}\n"
+    ./moul/ex${num_ex}.out > "./moul/ex${num_ex}.user"
+    local diff_result=$(diff "./moul/ex${num_ex}.user" "./moul/tests/${ASSN}/ex${num_ex}.expected" | cat -e)
+    printf "${diff_result}\n"
+    if [[ ${diff_result} == "" ]]; then
+        printf "${PURPLE}ex${num_ex}: ${DEFAULT}"
+        printf "${BG_GREEN}${BLACK}${BOLD} OK :D ${DEFAULT}\n"
         return 0
     else
+        printf "${PURPLE}ex${num_ex}: ${DEFAULT}"
         printf "${BG_RED}${BOLD} Diff KO :( ${DEFAULT}\n"
         return 1
     fi
@@ -55,16 +63,16 @@ test_assignment() {
     local exercises=($(get_exercises ${ASSN}))
 
     for ex in "${exercises[@]}"; do
+        printf "\n"
         if test_exercise "${ex}"; then
-            FINAL_RESULT+=("${GREEN}ex${ex}: OK${DEFAULT}")
+            FINAL_RESULT+=("${GREEN}ex${ex}:OK${DEFAULT}")
         else
-            FINAL_RESULT+=("${RED}ex${ex}: KO${DEFAULT}")
+            FINAL_RESULT+=("${RED}ex${ex}:KO${DEFAULT}")
         fi
     done
 }
 
 # main
-
 print_header
 test_assignment
 print_footer
