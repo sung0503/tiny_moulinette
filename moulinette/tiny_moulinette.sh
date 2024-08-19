@@ -90,7 +90,3 @@ print_header
 test_assignment
 print_footer
 exit ${EXIT_STATE}
-
-# TODO:
-# argument handling
-# norminette check only user's .c file
