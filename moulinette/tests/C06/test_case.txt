@@ -6,7 +6,7 @@ apple! apple# apple$
 apple pie apple banana
 apple banana cherry
 zebra yak apple
-apple  banana
+apple banana
 #hashtag @mention apple
 a c b
 apple apple apple
