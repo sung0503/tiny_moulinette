@@ -38,10 +38,10 @@ if check_dirname; then
     ./moul/tiny_moulinette.sh "${ASSN}"
     if [ $? -eq 0 ]; then
         rm -rf moul
-        exit 1
+        exit 0
     else
         rm -rf moul
-        exit 0
+        exit 1
     fi
 else
     printf "${RED}Current directory does not match expected pattern (C[00~13]).${DEFAULT}\n"

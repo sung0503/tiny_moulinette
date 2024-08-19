@@ -3,6 +3,7 @@
 ASSN=$1
 
 FINAL_RESULT=()
+EXIT_STATE=0
 
 . "moul/config.sh"
 
@@ -40,13 +41,20 @@ compile() {
 
 test_exercise() {
     local num_ex="$1"
-    local arguments="$2"
+    local test_case="$2"
     if ! compile ${num_ex}; then
         printf "${PURPLE}ex${num_ex}: ${DEFAULT}"
         printf "Compile Error! ${BG_RED}${BOLD} :( ${DEFAULT}\n"
         return 1
     fi
-    ./moul/ex${num_ex}.out > "./moul/ex${num_ex}.user"
+    if [ -n "${test_case}" ]; then
+        while IFS= read -r line; do
+            echo "---" >> "./moul/ex${num_ex}.user"
+            ./moul/ex${num_ex}.out ${line} >> "./moul/ex${num_ex}.user"
+        done < "${test_case}"
+    else
+        ./moul/ex${num_ex}.out > "./moul/ex${num_ex}.user"
+    fi
     local diff_result=$(diff "./moul/ex${num_ex}.user" "./moul/tests/${ASSN}/ex${num_ex}.expected" | cat -e)
     if [[ ${diff_result} == "" ]]; then
         printf "${PURPLE}ex${num_ex}: ${DEFAULT}"
@@ -62,13 +70,17 @@ test_exercise() {
 
 test_assignment() {
     local exercises=($(get_exercises ${ASSN}))
-
+    local test_case="./moul/tests/${ASSN}/test_case.txt"
+    if [ ! -f "$test_case" ]; then
+        test_case=""
+    fi
     for ex in "${exercises[@]}"; do
         printf "\n"
-        if test_exercise "${ex}"; then
+        if test_exercise "${ex}" "${test_case}"; then
             FINAL_RESULT+=("${GREEN}ex${ex}:OK${DEFAULT}")
         else
             FINAL_RESULT+=("${RED}ex${ex}:KO${DEFAULT}")
+            EXIT_STATE=1
         fi
     done
 }
@@ -77,6 +89,7 @@ test_assignment() {
 print_header
 test_assignment
 print_footer
+exit ${EXIT_STATE}
 
 # TODO:
 # argument handling
