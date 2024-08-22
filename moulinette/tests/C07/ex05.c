@@ -17,6 +17,7 @@ void test(char *str, char *charset)
 int main(void)
 {
     test("Hello 42 Gyeongsan So Hot Place.", "");
+    test("Hello 42 Gyeongsan So Hot Place.", "!@#$");
     test("Hello 42 Gyeongsan So Hot Place.", ". ");
     test("Hello 42 Gyeongsan So Hot Place.", "4");
     test("Hello 42 Gyeongsan So Hot Place.", "e");

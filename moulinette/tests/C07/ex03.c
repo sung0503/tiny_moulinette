@@ -14,6 +14,7 @@ int main(void)
     arr[4] = "Hot";
     arr[5] = "Place";
 
+    printf("%s\n", ft_strjoin(6, arr, ""));
     printf("%s\n", ft_strjoin(0, arr, " "));
     printf("%s\n", ft_strjoin(1, arr, " "));
     printf("%s\n", ft_strjoin(2, arr, " "));
