@@ -1,0 +1,8 @@
+Expected NULL & 0, got NULL & 0.
+Expected NULL & 0, got NULL & 0.
+Expected NULL & 0, got NULL & 0.
+Expected NULL & 0, got NULL & 0.
+res: 1 | arr: -1 
+res: 2 | arr: -1 0 
+Expected NULL & 0, got NULL & 0.
+res: 10 | arr: 30 31 32 33 34 35 36 37 38 39 
