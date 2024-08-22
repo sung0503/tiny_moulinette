@@ -1,6 +1,4 @@
-#include <unistd.h>
 #include <stdio.h>
-#include <stdlib.h>
 
 int ft_atoi_base(char *str, char *base);
 
@@ -13,6 +11,7 @@ void test(char *str, char *base)
 int main(void)
 {
     test("4242", "");
+    test("4242", "4");
     test("1000010010010", "01");
     test("4242", "012345678+");
     test("4242", "012345678-");
@@ -24,7 +23,7 @@ int main(void)
     printf("---\n");
     test("4242", "abcdefghij");
     printf("---\n");
-    test(" \t\n\v\f+1234", "012345678\t");
+    test(" \t\n\v\f+1234", "0123456789");
     test(" \t\n\v\f+-1234", "0123456789");
     test(" \t\n\v\f+--1234", "0123456789");
     test(" \t\n\v\f-+-1234", "0123456789");
@@ -40,5 +39,7 @@ int main(void)
     test(" \t\n\v\f-+-!@!", "@!");
     test(" \t\n\v\f-+-^%^", "%^");
     printf("---\n");
+    test("4242", "0123456788");
+    test("4242", "0123456784");
     return 0;
 }
