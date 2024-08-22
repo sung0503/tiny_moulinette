@@ -48,7 +48,7 @@ run ~/tiny_moulinette/run.sh
 | C01           | 0/9       | Not yet implemented   |
 | C02           | 0/13      | Not yet implemented   |
 | C03           | 0/6       | Not yet implemented   |
-| C04           | 1/6       | Only ex05 implemented |
+| C04           | 6/6       |                       |
 | C05           | 9/9       |                       |
 | C06           | 4/4       |                       |
 | C07           | 6/6       |                       |
