@@ -1,0 +1,7 @@
+ft_putchar called: a
+ft_putstr called: Hi
+ft_strcmp called:
+	Hello
+	World
+ft_strlen called: Hello 42 Gyeongsan
+ft_swap called: 4 2

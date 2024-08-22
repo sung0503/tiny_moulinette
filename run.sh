@@ -11,10 +11,30 @@ sigint_handler() {
     exit 1
 }
 
+run_norminette() {
+    if [ ${ASSN} = "C08" ]; then
+        cd "ex00"
+        norminette
+        cd "../ex01"
+        norminette -R CheckDefine
+        cd "../ex02"
+        norminette -R CheckDefine
+        cd "../ex03"
+        norminette
+        cd "../ex04"
+        norminette
+        cd "../ex04"
+        norminette
+        cd ..
+    else
+        norminette
+    fi
+}
+
 check_norminette() {
     if command -v norminette >/dev/null 2>&1; then
         printf "\n"
-        norminette
+        run_norminette
         printf "\n"
     else
         printf "\n${RED}norminette not found${GREY}, skip ${DEFAULT}\n\n"

@@ -35,7 +35,17 @@ compile() {
     local num_ex="$1"
     shift
     local source_files=("$@")
-    cc -Wall -Wextra -Werror -o "./moul/ex${num_ex}.out" $(ls ex${num_ex}/*.c) "./moul/tests/${ASSN}/ex${num_ex}.c"
+    if [ ${ASSN} = "C08" ]; then
+        if [ ${num_ex} = "04" ]; then
+            cc -Wall -Wextra -Werror -I./moul/tests/C08 -o "./moul/ex04.out" "ex04/ft_strs_to_tab.c" "./moul/tests/C08/ex04.c"
+        elif [ ${num_ex} = "05" ]; then
+            cc -Wall -Wextra -Werror -I./moul/tests/C08 -o "./moul/ex05.out" "ex04/ft_strs_to_tab.c" "ex05/ft_show_tab.c" "./moul/tests/C08/ex05.c"
+        else
+            cc -Wall -Wextra -Werror -I./ex${num_ex} -o "./moul/ex${num_ex}.out" "./moul/tests/C08/ex${num_ex}.c"
+        fi
+    else
+        cc -Wall -Wextra -Werror -o "./moul/ex${num_ex}.out" $(ls ex${num_ex}/*) "./moul/tests/${ASSN}/ex${num_ex}.c"
+    fi
     return $?
 }
 
