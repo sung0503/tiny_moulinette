@@ -65,7 +65,7 @@ test_exercise() {
     else
         ./moul/ex${num_ex}.out > "./moul/ex${num_ex}.user"
     fi
-    local diff_result=$(diff "./moul/ex${num_ex}.user" "./moul/tests/${ASSN}/ex${num_ex}.expected" | cat -e)
+    local diff_result=$(diff "./moul/tests/${ASSN}/ex${num_ex}.expected" "./moul/ex${num_ex}.user" | cat -e)
     if [[ ${diff_result} == "" ]]; then
         printf "${PURPLE}ex${num_ex}: ${DEFAULT}"
         printf "PASS ${BG_GREEN}${BLACK}${BOLD} :D ${DEFAULT}\n"
