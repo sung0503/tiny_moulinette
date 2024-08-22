@@ -27,9 +27,9 @@ int main(void)
     arr[0] = "Hello";
     arr[1] = "42";
     arr[2] = "Gyeongsan";
-    arr[3] = "Fucking";
-    arr[4] = "So";
-    arr[5] = "Hot";
+    arr[3] = "So";
+    arr[4] = "Hot";
+    arr[5] = "Place";
 
     test(ft_strs_to_tab(-1, NULL));
     test(ft_strs_to_tab(0, NULL));

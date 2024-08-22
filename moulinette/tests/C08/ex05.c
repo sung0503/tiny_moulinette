@@ -13,9 +13,9 @@ int main(void)
     arr[0] = "Hello";
     arr[1] = "42";
     arr[2] = "Gyeongsan";
-    arr[3] = "Fucking";
-    arr[4] = "So";
-    arr[5] = "Hot";
+    arr[3] = "So";
+    arr[4] = "Hot";
+    arr[5] = "Place";
 
     write(1, "---\n", 4);
     ft_show_tab(ft_strs_to_tab(1, arr));
