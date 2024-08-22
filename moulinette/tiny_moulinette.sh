@@ -17,7 +17,7 @@ print_header() {
     printf "░░░██║░░░██║██║░╚███║░░░██║░░░\n"
     printf "░░░╚═╝░░░╚═╝╚═╝░░╚══╝░░░╚═╝░░░\n"
     printf "${DEFAULT}"
-    printf "    ver. 0.1.1 23 Aug 2024\n\n"
+    printf "    ver. 0.3.0 23 Aug 2024\n\n"
     printf "  Now testing ${ASSN} assignment\n"
 }
 
