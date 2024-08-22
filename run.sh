@@ -27,7 +27,7 @@ run_norminette() {
         norminette
         cd ..
     else
-        norminette
+        norminette -R CheckForbiddenSourceHeader
     fi
 }
 
