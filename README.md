@@ -26,13 +26,16 @@ git pull
 ```
 
 ### How to use
-We tried to make it as easy as possible. You just have to execute ***run.sh*** inside the CXX folder.
 
 > ***Warning: Use with caution.***   
 > This project does not quarantee 100% accurate, the tests may not cover every edge cases.
 
+We tried to make it as easy as possible. You just have to execute ***run.sh*** inside the **CXX** folder.
+
 Following scripts are just for examples.
 ```bash
+git clone [repository_url] C02
+
 cd ~
 
 git clone https://github.com/sung0503/tiny_moulinette.git
