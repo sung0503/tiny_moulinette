@@ -16,6 +16,7 @@ void test(char *str, char *charset)
 
 int main(void)
 {
+    test("", "");
     test("Hello 42 Gyeongsan So Hot Place.", "");
     test("Hello 42 Gyeongsan So Hot Place.", "!@#$");
     test("Hello 42 Gyeongsan So Hot Place.", ". ");
@@ -25,5 +26,7 @@ int main(void)
     test("aaabbbaaabbbaaa", "a");
     test("aaabbbaaabbbaaa", "ab");
     test("bsaasbsabsabsabasbsabsabsabsabsabsabssbsbaasbsabsabsabsabsabbbbbbasbs", "abs");
+    test("bsaasbsabsabsabasbccccsabsabsabsabsabsabssbsbaasbsabsabsabsabsabbbbbb", "abs");
+    test("bcahhhbcahhhbcah h$$#%^#^hhbca", "abc");
     return 0;
 }
