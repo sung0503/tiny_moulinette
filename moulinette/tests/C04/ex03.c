@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int	ft_atoi(char *str);
+int ft_atoi(char *str);
 
 int main(void)
 {
@@ -16,7 +16,7 @@ int main(void)
     printf("%d\n", ft_atoi("-+1234a5678"));
     printf("%d\n", ft_atoi("-+1234 \t\n\v\f\r5678"));
     printf("%d\n", ft_atoi("-+1234-5678"));
-    printf("%d\n", ft_atoi("--------------------+1234+5678"));
+    printf("%d\n", ft_atoi("---------------------+1234+5678"));
     printf("%d\n", ft_atoi("-+1234--5678"));
     printf("%d\n", ft_atoi("-+1234-+5678"));
     return 0;
