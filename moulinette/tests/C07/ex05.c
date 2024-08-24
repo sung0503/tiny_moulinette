@@ -10,6 +10,8 @@ void test(char *str, char *charset)
     printf("---\n");
     while (res[++i] != 0)
     {
+        if (res[i][0] == '\0')
+            printf("%s", "empty\n");
         printf("%s\n", res[i]);
     }
 }
